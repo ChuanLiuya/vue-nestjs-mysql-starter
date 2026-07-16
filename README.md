@@ -33,93 +33,7 @@
 
 ## GitFlow 工作流
 
-本项目使用 [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) 分支模型管理代码，已通过 `git-flow` 扩展（AVH Edition）初始化。
-
-### 分支说明
-
-| 分支 | 用途 |
-|------|------|
-| `main` | 生产就绪代码，只接受来自 `release` 和 `hotfix` 的合并 |
-| `develop` | 日常开发主分支，汇集所有已完成的功能 |
-| `feature/*` | 开发新功能，从 `develop` 拉出，合并回 `develop` |
-| `release/*` | 发布准备，从 `develop` 拉出，合并到 `main` 和 `develop` |
-| `hotfix/*` | 紧急修复，从 `main` 拉出，合并到 `main` 和 `develop` |
-| `bugfix/*` | 修复未发布分支的问题 |
-
-### 常用命令
-
-#### 初始化（已完成）
-
-```bash
-git flow init -d
-```
-
-#### 开发新功能
-
-```bash
-# 开始一个新功能
-git flow feature start <功能名称>
-
-# 例如：git flow feature start user-login
-
-# 完成功能（自动合并回 develop）
-git flow feature finish <功能名称>
-```
-
-#### 发布版本
-
-```bash
-# 开始发布
-git flow release start <版本号>
-
-# 例如：git flow release start 1.0.0
-
-# 完成发布（合并到 main 和 develop，自动打 tag）
-git flow release finish <版本号>
-
-# 推送 tag
-git push --tags
-```
-
-#### 紧急修复
-
-```bash
-# 从 main 拉出修复分支
-git flow hotfix start <修复名称>
-
-# 例如：git flow hotfix start fix-crash-bug
-
-# 完成修复（合并到 main 和 develop）
-git flow hotfix finish <修复名称>
-```
-
-#### 推送分支到远程
-
-```bash
-# 推送 feature 分支
-git flow feature publish <功能名称>
-
-# 推送所有分支（首次）
-git push -u origin main develop
-git push --all
-```
-
-### 团队协作流程
-
-```
-main ─────●────────────●────────────────────●
-           \          /                    /
-develop ───●──●──────●──●────●────────────●
-             \      /      \  /          /
-feature/     ●────●        ●──●─────────
-```
-
-1. 从 `develop` 拉取最新代码
-2. 创建 `feature/xxx` 分支开发新功能
-3. 完成后合并回 `develop`
-4. 准备发布时，从 `develop` 创建 `release/x.x.x`
-5. 测试通过后合并到 `main` 并打 tag
-6. 线上紧急问题从 `main` 创建 `hotfix/xxx`
+本项目采用 **GitFlow** 分支模型管理代码，详细操作指南请查阅 [`docs/gitflow-guide.md`](docs/gitflow-guide.md)。
 
 ---
 
@@ -171,6 +85,8 @@ vue-nestjs-mysql-start/
 │   ├── index.html
 │   ├── vite.config.ts
 │   └── package.json
+├── docs/                    # 项目文档
+│   └── gitflow-guide.md     # GitFlow 工作流指南
 └── README.md
 ```
 
