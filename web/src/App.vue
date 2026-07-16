@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+
+onMounted(() => {
+  console.log(`当前环境: ${import.meta.env.MODE}`)
+  console.log(`应用标题: ${import.meta.env.VITE_APP_TITLE}`)
+})
 </script>
 
 <template>

@@ -103,6 +103,7 @@ git push -u origin main develop
 2. **完成 release 或 hotfix 后务必推送 tag** — `git push --tags`
 3. **feature 分支命名** — 使用简短英文，如 `user-auth`、`add-dashboard`
 4. **多人协作** — 使用 `git flow feature publish` 推送，其他人用 `git flow feature pull origin <名称>` 拉取
+5. **等用户确认再 finish** — 创建 feature / release / hotfix 分支后，不要擅自执行 finish 操作，等用户明确说"finish"或"结束分支"后再执行
 
 ---
 
