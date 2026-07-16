@@ -1,6 +1,6 @@
 # GitFlow 工作流指南
 
-> 本项目使用 [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) 分支模型管理代码，已通过 `git-flow` 扩展（AVH Edition）初始化。`git-flow` 随 **Git for Windows** 一起捆绑安装，无需额外下载。
+> 本项目使用 [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/) 分支模型管理代码，`git-flow` 随 **Git for Windows** 一起捆绑安装，无需额外下载。
 
 ---
 
